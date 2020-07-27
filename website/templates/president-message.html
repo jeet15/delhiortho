@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>President's Message</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="president-message.php">President's Message</a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+
+                <!--================Our About Area =================-->
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2>President Message </h2>
+                            </div>
+                            
+                            <p>Dear Friends,<br>
+                            Its indeed an honor to take over as President of an esteemed body like Delhi Orthopaedic Organization. The DOA has a rich history, tradition and culture, and has been led by many respectable dignitaries in past. My immediate predecessor did excellent work to raise the bar of the Organization to newer heights. We were first among the Four-Star Chapters in the country as per IOA rating.</p>
+                            <p>As the new Executive Committee takes over, we need to ponder, are there any areas where we are becoming deficient. The first and foremost that comes to mind is the gradual disconnect that is growing between the Association and its constituents i.e. the Orthopaedic Surgeons of Delhi, both young and seniors. The attendance in most of DOA programmes/events is becoming thinner and lot of effort is invariably required to have a reasonable gathering at these events including the prestigious DOACON. Growing number of city’s elite institutions are organizing their independent major programmes or events without collaborating with DOA leading to duplication of efforts.</p>
+                            <p>We all need to work hard to bridge the disconnect and try to bring, all efforts on Orthopaedic education & training under one roof. We should make our Courses and Events precise and useful to larger fraternity, to invite maximum participation. The theme for this year is “Weigh Evidence, Respect Experience”. Its based on the premise that all the evidences being thrown on us these days needs to be accepted carefully while analyzing them against our own rich experience of many years. Besides academics, the aim of an organization is also to promote social contacts and harmony amongst its members. We must promote social meetings &/or excursions amongst members and their families.</p>
+                            <p>DOA activities, this year are starting with DOA Basic Trauma Course, which is proving to be a huge success with 100% registrations a week before the Course date. I request all senior DOA members to participate in this & other DOA events during the year and share your rich experiences with learners as well as other colleagues.
+                            </p>
+                            <p>The complete DOA Academic Calendar for 2019-20 is ready and has been launched.<br>Wish you all a very happy & prosperous new year.</p>
+                            <p>Warm Regards<br>
+                            Dr. Sharad K. Agarwal<br>
+                            <strong>President</strong><br>
+                            Delhi Orthopaedic Association
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="our_about_image">
+                            <img src="{% static 'images/team/dr-sharad-agarwal.jpeg' %}" alt="" style="margin-bottom: 10px;">
+                            <a href="javascript:void(0);" style="text-align: center;"><h4>Dr. Sharad K. Agarwal</h4></a>
+                            <h6 style="text-align: center;">President</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

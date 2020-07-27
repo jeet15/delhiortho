@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>{{ object.title }}}</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="home.html">Home</a>
+                    <a href="doa-events.html">DOA Events Detail</a>
+                    <a href="#">{{ object.title }}</a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+        
+
+        <!--================End Banner Area =================-->
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">                    
+                    <div class="col-md-12" style="margin-bottom: 20px;">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2>{{ object.title }} </h2>
+                                <!-- <?php 
+                                    if ($featured_image) {
+                                        # code...
+                                        ?>  
+                                            <img class="img-responsive" src="admin/upload/event/<?php echo $featured_image; ?>">
+                                        <?php
+                                    } -->
+                                
+                                <div class="col-md-12">{{ object.description|safe }}</div>
+                                
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	
+{% endblock %}

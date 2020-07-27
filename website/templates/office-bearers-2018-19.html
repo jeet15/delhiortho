@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>Office Bearers 2018-19</h3>
+                    <div class="abnner_link_inner" style="font-size: 13px;">
+                        <a class="active" href="index.php">Home</a> >> 
+                        <a href="office-bearers-2018-19.php">Office Bearers 2018-19</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+        <section class="our_workers_area" style="background:#fff;">
+            <div class="container">
+                <div class="section_title">
+                    <h2>Our Office Bearers 2018-19</h2>
+                    
+                </div>
+                <div class="row d_team_inner">
+                    {% for post in object_list %}
+                    <div class="col-md-3 col-xs-6">
+                        <div class="workers_item" style="padding: 20px; border: 1px solid #bdbdbd;">
+                            <div class="workers_img">                                
+                                <img src="media/{{ post.image }}" alt="" style='height: 170px; width: 150px;'>
+                                
+                            </div>
+                            <h4 style="color: #194172;">{{ post.name }}</h4>
+                            <h6 style="color: #F77F28;">{{ post.designation }}></h6>
+                            <p style="font-size: 12px;"><i class="fa fa-phone"></i>  {{ post.phone }}</p>
+                            <p style="font-size: 12px; text-transform: lowercase;"><i class="fa fa-envelope"></i>  {{ post.email }}</p>
+                        </div>
+                    </div>
+                   {% endfor %}            
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}

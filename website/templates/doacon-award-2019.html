@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>DOACON Award 2019</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="doacon-award-2015.php">DOACON Award 2019</a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2>DOACON Awards 2019</h2>
+                                
+                            </div>
+                           
+                            <table class="table table-bordered">
+                              <tbody>
+                             <tr class="info">
+                                <!-- <td width="8%"><strong></strong></td> -->
+                                <td width="50%"><strong>Awards Title</strong> </td>
+                                <td width="40%"><strong>Person</strong> </td>
+                                <!-- <td width="10%"><strong>Certificates</strong> </td> -->
+                              </tr>
+                              {% for post in object_list %}
+                              <tr>
+                                <th>{{ post.title }}</th>
+                                <td>{{ post.person }}</td>
+                                <!-- <td><a href="admin/upload/awards/<?php echo $data['file']; ?>" target="_blank">View</a></td> -->
+                                                                       
+                              </tr>
+                              {% endfor %}
+                             
+                            </tbody>
+                        </table>
+                            
+
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<style type="text/css">
+	@media (min-width: 992px){
+		.col-md-6 {
+		    width: 45%;
+		}
+	}
+</style>
+<form action="#" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+   <div class="form-group col-md-12">
+        <button type="submit" value="submit" name="submit" class="btn green_submit_btn form-control">submit now</button>
+    </div>
+    
+</form>
+
+
+{% endblock %}

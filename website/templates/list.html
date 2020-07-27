@@ -1,0 +1,5 @@
+{% for post in object_list %}
+	<h2><a href="{% url 'event-detail' post.pk %}">{{ post.title }}</a></h2>
+	{{ post.description }}
+	
+{% endfor %}

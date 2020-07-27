@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<?php 
+
+if (isset($_GET['id'])) {
+    # code...
+    $id = $_GET['id'];
+    $stmt = $mysqli->query("SELECT * FROM archive_journal WHERE id = $id ");
+    while ($data = $stmt->fetch_assoc()) {   
+        $year = $data['year'];                 
+        $title = $data['title'];          
+        $description = $data['description'];          
+        $featured_image = $data['featured_image'];          
+        $attachment = $data['attachment'];          
+        $uploaded_on = $data['uploaded_on'];          
+    }
+}
+
+?>
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3><?php echo $title; ?></h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="doa-events.php">DOA Jouranl Archive</a>
+                    <a href="#"><?php echo $title; ?></a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+        
+
+        <!--================End Banner Area =================-->
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">                    
+                    <div class="col-md-12" style="margin-bottom: 20px;">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2><?php echo $title; ?> </h2>
+                                <?php 
+                                    if ($featured_image) {
+                                        # code...
+                                        if ($attachment) {
+                                            # code...
+                                            ?>  
+                                            <a href="admin/upload/journal/<?php echo $attachment; ?>">
+                                                <img class="img-responsive" src="admin/upload/journal/<?php echo $featured_image; ?>">
+                                            </a>
+                                            <?php
+                                        }
+                                        else{
+                                            ?>
+                                                <img class="img-responsive" src="admin/upload/journal/<?php echo $featured_image; ?>">
+                                            <?php
+                                        }                                        
+                                    }
+                                ?>
+                                <div class="col-md-12"><?php echo $description;  ?></div>
+                                
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

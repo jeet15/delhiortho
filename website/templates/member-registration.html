@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+ 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style type="text/css">
+       .our_about_left_content ul{
+            list-style: disc;
+            font-size: 13px;
+            line-height: 20px;
+            color:
+            #0f0f0f;
+            letter-spacing: .1px;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 0px;
+            padding-bottom: 20px;
+            font-weight: 200;
+            text-align: justify;
+        }
+        label.error{
+            color:red !important;
+            font-size: 12px !important;
+        }
+        .inputsec{
+            width: 47%;
+            margin: 5px 5px;
+            padding: 6px;
+            height: 42px;
+        }
+        .inputsec1{
+            width: 95.5%;
+            margin: 5px 5px;
+            padding: 6px;
+            /*height: 42px;*/
+        }
+        .typesec{
+            display: inline-flex;
+        }
+        .typesec label{
+            display: grid;
+            margin-bottom: 10px;
+            font-weight: 400;
+            margin-right: 31px;
+            padding-left: 5px;
+            margin-top: 0px;
+        }
+        .errorlist{
+            max-width: 90%;
+            padding-left: 20px;
+            color: red;
+        }
+    </style>
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>Online Registration</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="">Online </a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+        
+        <!--================Contact Us Area =================-->
+        <section class="contact_us_area">
+            <div class="container">
+                <div class="contact_us_inner">                    
+                    <div class="row">
+                        <p style="text-align: center;">
+                            
+                        </p>
+                        <div class="col-md-4">
+                            <div class="our_about_left_content">
+                                <div class="section_title">
+                                    <h2>Member Registration</h2>
+                                </div>
+                                
+                                <p>Life Membership:Orthopedic Surgeon with proper training in the specialty with D Ortho.,MS (Ortho.), Mch (Ortho.), DNB (Ortho.), FRCS (Ortho.) qualifications are eligible for life membership .</p>
+                                <p>Please send a photocopy of the qualification along with a Draft or money transfer of Rs 3000/- to ” Delhi Orthopedics Association”. You can submit the form online with or without bank transfer. Else dispatch to the secretary.</p>
+                                
+                            </div>                            
+                            <div class="our_about_left_content">
+                                <div class="section_title" style="padding-bottom: 5px;">
+                                    <h2 style="font-size:15px;">Associate Membership</h2>
+                                </div>
+                                
+                                <p>Life Membership:Orthopedic Surgeon with proper training in the specialty with D Ortho.,MS (Ortho.), Mch (OrtAssociate members may be elected from those</p>
+                                <ul>
+                                    <li>who are training in orthopaedic surgery</li>
+                                    <li>physicians and surgeons in this or other countries who are interested in orthopaedic surgery or allied branches of medicine or</li>
+                                    <li>who are engaged in practice of allied subjects closely related to Orthopaedic Surgery such as physiotherapy etc. </li>
+                                </ul>
+                                
+                            </div>     
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                
+                                <div class="section_title">
+                                    <h2>Fill the details</h2>
+                                </div>
+                                <form name="registration" class="contact_us_form" action="#" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="tempno" value="">
+                                    
+                                    {{form.as_p}}
+
+                                    
+                                    <div class="form-group col-md-12" style="margin-top: 10px;">
+                                            <button type="submit" value="submit" name="submit" class="btn green_submit_btn form-control">submit now</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+          
+            </div>
+        </section>
+        <!--================End Contact Us Area =================-->
+
+
+{% endblock %}
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        alert("hello world")
+    })
+</script>

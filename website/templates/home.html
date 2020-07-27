@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+    <body>
+
+        <!--================Slider Area =================-->
+        <section class="main_slider_area">
+            <!--  -->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                {% for slider in slider %}
+                <div class="item {{slider.homeclass}}">
+                    <a href="{% if slider.sliderlink %}{{ slider.sliderlink }}{% else %}#{% endif %}" target="_blank">
+                        <img src="media/{{ slider.slider }}" alt="">
+                    </a>
+                </div>
+                {% endfor %}
+                <!-- <div class="item active">
+                  <img src="{% static 'images/slider/slider24.jpg' %}" alt="slider1">
+                </div>
+                <div class="item">
+                  <img src="{% static 'images/slider/slider23.jpg' %}" alt="slider1">
+                </div>
+                <div class="item">
+                  <img src="{% static 'images/slider/slider22.jpg' %}" alt="slider1">
+                </div>
+                <div class="item">
+                  <img src="{% static 'images/slider/slider21.jpg' %}" alt="slider1">
+                </div>
+                <div class="item">
+                  <img src="{% static 'images/slider/slider-20.jpg' %}" alt="slider1">
+                </div>
+              
+                <div class="item"><a href="https://www.journal-cot.com/" target="_blank">
+                  <img src="{% static 'images/slider/slider.jpg' %}" alt="slider3"></a>
+                </div>
+
+                <div class="item">
+                  <img src="{% static 'images/slider/slider-3.jpg' %}" alt="slider4">
+                </div> -->
+                
+               
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+        </section>
+        <!--================End Slider Area =================-->
+        <div class="hidden-xs" style="height:20px; backgroud:#ffffff;">
+            <marquee direction="scroll" onmouseover="this.stop();" onmouseout="this.start();" style="color:red;"><strong>Online Events News: </strong><span  style="padding-left:40px;">  1. ASAMI India Webinar <a href="https://delhiortho.in/files/ASAMI-India-Webinar.pdf">click here</a> </span><span  style="padding-left:40px;">  2. E- SYMPOSIUM - PAEDIATRIC ORTHOPAEDICS <a href="https://delhiortho.in/files/E-SYMPOSIUM-PAEDIATRIC-ORTHOPAEDICS.pdf">click here</a> </span><span  style="padding-left:40px;">  3. DOA PG TEACHING WEBINAR-1x <a href="https://delhiortho.in/files/DOA-PG-TEACHING-WEBINAR-1.pdf">click here</a> </span></marquee>
+        </div>
+
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2>Welcome to Delhi Orthopaedic Association </h2>
+                            </div>
+                            
+                            <p>As the new Executive Committee takes over, we need to ponder, are there any areas where we are becoming deficient. The first and foremost that comes to mind is the gradual disconnect that is growing between the Association and its constituents i.e. the Orthopaedic Surgeons of Delhi, both young and seniors. The attendance in most of DOA programmes/events is becoming thinner and lot of effort is invariably required to have a reasonable gathering at these events including the prestigious DOACON. Growing number of city’s elite institutions are organizing their independent major programmes or events without collaborating with DOA leading to duplication of efforts.</p>
+                            <a class="main_btn" href="president-message.php">President Message</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="company_collaps_inner" style="padding-left: 0px border: 1px solid #f9f9f9;">
+                            <div class="home_section_title" style="background: #851B0F;">
+                                <h2 style="color: #fff;">Upcoming Events</h2>
+                                
+                            </div>
+                            <marquee id="test" behavior="scroll" direction="up" height="270" scrolldelay="100" scrollamount="10" onmouseover="document.all.test.stop()" onmouseout="document.all.test.start()">
+                            <ul class="event-point">
+                              
+                                {% for event in event %}
+                                <li>
+                                    <div class="row event-row">
+                                        <div class="col-md-2 edate">
+                                            
+                                                {{ event.edate }}<br>
+                                                <span>{{ event.emonth }}</span>
+                                            
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="etitle">
+                                                <a class="collapsed"  href="{% url 'event-detail' event.pk %}" >{{ event.title }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </li>
+                               {% endfor %}
+                              
+                            </ul>
+                            </marquee>
+           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <style type="text/css">
+            .img-circle{
+                border-radius: 0%;
+                height: 100%;
+            }
+        </style>
+        <section class="partner_area" style="background: #ede; padding: 50px 0px;">
+            <div class="container">
+                <div class="section_title">
+                    <h2>DOA Office Bearers 2019-20</h2>                    
+                </div>
+                <div class="partner_slider owl-carousel">
+                    {% for post in object_list %}
+                    
+                    <div class="item">
+                        <div class="team_box">                            
+                            <img class="img-responsive" src="media/{{ post.image }}" alt="{{ post.name }}" style='height: 150px; width: 120px;'>
+                            
+                            <div class="team_text">
+                                <h5>{{ post.name }}</h5>
+                                <h6>{{ post.designation }}</h6>
+                                <p class="phone"><i class="fa fa-phone"></i>  {{ post.phone }}</p>
+                                <p class="email"><i class="fa fa-envelope"></i>  {{ post.email }}</p>  
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="cases_btn_area"><a class="green_submit_btn" href="office-bearers-2019-20.php">view all Bearers</a></div>
+            </div>
+        </section>
+        
+        
+        
+        <!--================Our Company Area =================-->
+        <section class="our_company_area white_company" style="background: #f0f0f0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 notice">
+                        <div class="company_item">
+                            <div class="section_title">
+                                
+                                <h2>DOA EVENTS 2020</h2>
+                            </div>
+                            <ul style="font-size: 13px; font-weight: 200; list-style: disc; color: #222; line-height: 1.8;">
+                                
+                            
+                           {% for event in event %}
+                                <li><a href="{% url 'event-detail' event.pk %}" >{{ event.title }}</a></li>
+                            {% endfor %}
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="company_item">
+                            <div class="section_title">
+                                <h2>Recent News</h2>
+                            </div>
+                            <ul style="font-size: 13px; font-weight: 200; list-style: disc; color: #222; line-height: 1.8;">
+                                
+                            
+                            {% for ns in news %}
+                                <li><a href="media/{{ ns.newsfile }}" target="_blank">{{ ns.title }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="company_item">
+                            <div class="section_title">
+                                <h2>Media</h2>                                
+                            </div>
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDelhiOrthopaedicAssociation%2F&tabs=timeline&width=340&height=340&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=811968345831363" width="340" height="340" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Our Company Area =================-->
+        <!--================Get In Consultation Area =================-->
+        <section class="get_consult_area">
+            <div class="container">
+                <div class="pull-left">
+                    <h3>Become A Member Of Delhi Orthopaedic Association</h3>
+                </div>
+                <div class="pull-right">
+                    <a class="submit_btn" href="member-registration.php">Join Now</a>
+                </div>
+            </div>
+        </section>
+        <!--================End Get In Consultation Area =================-->
+
+
+        
+{% endblock %}

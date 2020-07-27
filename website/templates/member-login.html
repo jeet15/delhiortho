@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    
+    <style type="text/css">
+        label.error{
+            color: red !important;
+        }
+    </style>
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>Member Login</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="member-login.php">Member Login</a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4" style="border: 1px solid #d2d2d2; padding: 18px;">
+                        <div class="text-center m-0"><a href="index.php" class="logo logo-admin"><img src="{% static 'images/logo.png' %}" height="85" alt="logo"></a> </div>
+
+                    
+                        <h4 class="text-muted font-18 m-b-5 text-center">Welcome Back !</h4>
+                        <p class="text-muted text-center" style="margin-bottom: 10px;">login in to continue to Delhi Ortho Member</p>
+                        
+                        <p style="color: red;">{{error}}</p>
+                        
+                        <form class="contact_us_form" name="login-form" action="#" method="POST" novalidate="novalidate" style="background: #2d2d2d; ">
+                            {% csrf_token %}
+                      <!--   <div class="form-group col-md-12">
+                            <select class="form-control type" id="type" name="type" required="">
+                                <option value="">Select Member Type</option>
+                                <option value="member">Life Membership</option>
+                                <option  value="associate">Associate Member</option>
+                            </select>
+                        </div> -->
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" id="userid" name="userid" placeholder="Member ID" required="">
+                        </div>
+                        <!-- <div class="form-group col-md-12">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                        </div> -->
+                        <div class="form-group col-md-12">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                        </div>
+                        <div class="form-group col-md-12" style="text-align: center;">
+                            <button type="submit" value="submit" name="login" class="btn green_submit_btn form-control" style="margin:0 auto;">login</button>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="col-md-4"></div>
+
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("form[name='login-form']").validate({
+            rules:{
+                type:"required",
+                userid:"required"
+            },
+            messages: {
+                type:"Please select member type",
+                userid:"Please insert your USERID"
+            }
+
+        });
+
+    });
+</script>

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>DOA Member List</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="#">DOA Member List</a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- <form  class="contact_us_form" action="member-list.php" method="POST">
+                            <div class="form-group col-md-3">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Member Name">
+                            </div>
+                            <div class="form-group col-md-3">                                
+                                <select class="form-control" id="type" name="type">
+                                    <option value="">Select Type</option>
+                                    <option value="member">Life Member</option>
+                                    <option value="associate">Associate Member</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Mobile No">
+                            </div>
+                            
+                           <div class="form-group col-md-3" style="margin-top: 0px;">
+                                <button type="submit" value="submit" name="search" class="btn green_submit_btn form-control">Search</button>
+                           </div>
+                        </form> -->
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-12">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2>Delhi Orthopedic Member List</h2>
+                                <table style="width: 100%;">
+                                    <thead style="background: #851B0F;">
+                                        <tr>
+                                            <th style="color: #fff; border: 1px solid; padding: 8px;">Sno.</th>
+                                            <th style="color: #fff; border: 1px solid; padding: 8px;">Member Name</th>
+                                            <th style="color: #fff; border: 1px solid; padding: 8px;">Email</th>
+                                            <th style="color: #fff; border: 1px solid; padding: 8px;">Mobile No.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for member in member %}
+                                            <tr>
+                                                <td>{{member.memberid}}</td>
+                                                <td>{{member.firstname}}</td>
+                                                <td>{{member.email}}</td>
+                                                <td>{{member.mobile}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                
+                               
+                            </div>
+                           
+                          
+
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </section>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+        
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>DOA News</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="index.php">Home</a>
+                    <a href="doa-news.php">DOA News</a>
+                </div>
+            </div>
+        </div>
+        <style type="text/css">
+            .section_title h2{
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .doa-newsn{
+                padding-top: 10px;
+            }
+            .doa-newsn li{
+                list-style: none;
+                border-bottom: solid 1px;
+                color:
+                #ddd;
+                margin-bottom: 10px;
+                width: 40%;
+                float: left;
+                margin-right: 60px;
+            }
+        </style>
+        <!--================End Banner Area =================-->
+        <section class="our_about_area">
+            <div class="container">
+                <div class="row">
+                    {% for post in object_list %}
+                    
+                    <div class="col-md-12" style="margin-bottom: 20px;">
+                        <div class="our_about_left_content">
+                            <div class="section_title">
+                                <h2>DOA News {{ post.year }} </h2>
+                                
+                                <ul class="doa-newsn">
+                                
+                                    <li><a href="media/{{ ns.newsfile }}" target="_blank">{{ post.title }}</a></li>
+                                
+                                </ul>
+                                
+                            </div>                            
+                        </div>
+                    </div>
+                   {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}

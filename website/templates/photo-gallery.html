@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+        <style type="text/css">
+            .our_about_image img{
+                max-width: 368px;
+            }
+        </style>
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h3>Photo Gallery</h3>
+                </div>
+            </div>
+        </section>
+        <div class="banner_link">
+            <div class="container">
+                <div class="abnner_link_inner">
+                    <a class="active" href="home.html">Home</a>
+                    <a href="photo-gallery.html">Photo Gallery</a>
+                </div>
+            </div>
+        </div>
+        <!--================End Banner Area =================-->
+
+        <section class="our_cases_area">
+            <div class="container">
+                
+                <div class="row our_case_inner">
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/1.jpeg' %}" alt="">
+                        </div>                        
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/2.jpeg' %}" alt="">
+                        </div>                      
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/3.jpeg' %}" alt="">
+                        </div>                        
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/4.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/6.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/7.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/5.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/8.jpeg' %}" alt="">
+                        </div>                       
+                    </div> -->
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/9.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/10.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/11.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                   <!--  <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/12.jpeg' %}" alt="">
+                        </div>                       
+                    </div> -->
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/13.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="our_about_image b_left_img">
+                            <img src="{% static 'images/gallery/14.jpeg' %}" alt="">
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
